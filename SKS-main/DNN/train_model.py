@@ -7,17 +7,20 @@ import scipy
 from time import time
 # import time
 import sys
+import tensorflow as tf
+
+from tensorflow.python import compat
+
 import utils as U
 import pickle as pk
 import os
-import tensorflow as tf
 
-from tensorflow.compat.v1 import ConfigProto
-from tensorflow.compat.v1 import InteractiveSession
+#from tensorflow.python.compat import compat.v1.ConfigProto
+#from tensorflow.compat.v1 import InteractiveSession
 
-config = ConfigProto()
+config = tf.compat.v1.ConfigProto()
 config.gpu_options.allow_growth = True
-session = InteractiveSession(config=config)
+session = tf.compat.v1.InteractiveSession(config=config)
 
 
 logger = logging.getLogger(__name__)

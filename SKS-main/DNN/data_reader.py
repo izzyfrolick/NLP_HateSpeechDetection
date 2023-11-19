@@ -120,7 +120,7 @@ def get_indices(tweets, vocab, word_list_path):
         n = len(content)
         t = False
         indices = []
-        category_indeics = []  # 脏词为0，错词为1，其他为2
+        category_indeics = []  
         # for word in content:
         for j in range(n):
             # if is_number(word):
