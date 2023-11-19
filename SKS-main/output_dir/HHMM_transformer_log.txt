@@ -1,7 +1,7 @@
 [INFO] (utils) Arguments:
 [INFO] (utils)   batch_size: 512
-[INFO] (utils)   command: ./DNN/train_model.py -d ../data/SemEval_task5/df_train.csv --trial ../data/SemEval_task5/df_test.csv -s ../data/sentiment_datasets/train_E6oV3lV.csv --word_list ../data/word_list/word_all.txt --emb ./glove.6B.300d.txt -o output_dir -b 512 --epochs 15 --lr 0.002 --maxlen 50 -t HHMM_transformer
-[INFO] (utils)   data_path: ../data/SemEval_task5/df_train.csv
+[INFO] (utils)   command: ./DNN/train_model.py -d ./data/SemEval_task5/df_train.csv --trial ./data/SemEval_task5/df_test.csv -s ./data/sentiment_datasets/train_E6oV3lV.csv --word_list ../data/word_list/word_all.txt --emb ./glove.6B.300d.txt -o output_dir -b 512 --epochs 15 --lr 0.002 --maxlen 50 -t HHMM_transformer
+[INFO] (utils)   data_path: ./data/SemEval_task5/df_train.csv
 [INFO] (utils)   dropout_prob: 0.1
 [INFO] (utils)   emb_dim: 300
 [INFO] (utils)   emb_path: ./glove.6B.300d.txt
@@ -14,8 +14,8 @@
 [INFO] (utils)   non_gate: False
 [INFO] (utils)   out_dir_path: output_dir
 [INFO] (utils)   sarcasm_data_path: None
-[INFO] (utils)   sentiment_data_path: ../data/sentiment_datasets/train_E6oV3lV.csv
-[INFO] (utils)   trial_data_path: ../data/SemEval_task5/df_test.csv
+[INFO] (utils)   sentiment_data_path: ./data/sentiment_datasets/train_E6oV3lV.csv
+[INFO] (utils)   trial_data_path: ./data/SemEval_task5/df_test.csv
 [INFO] (utils)   vocab_path: None
 [INFO] (utils)   word_list_path: ../data/word_list/word_all.txt
 [INFO] (utils)   word_norm: 1

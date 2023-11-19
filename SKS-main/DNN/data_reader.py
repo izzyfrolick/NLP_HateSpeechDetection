@@ -6,7 +6,10 @@ import re
 import nltk
 import numpy as np
 import pandas as pd
+
 from nltk.text import TextCollection
+from nltk.tokenize import word_tokenize
+nltk.download()
 
 # from sklearn.feature_extraction.text import TfidfTransformer
 
@@ -120,7 +123,7 @@ def get_indices(tweets, vocab, word_list_path):
         n = len(content)
         t = False
         indices = []
-        category_indeics = []  
+        category_indeics = [] 
         # for word in content:
         for j in range(n):
             # if is_number(word):
