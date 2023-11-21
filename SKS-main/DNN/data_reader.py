@@ -6,10 +6,14 @@ import re
 import nltk
 import numpy as np
 import pandas as pd
-
+from tensorflow import keras
+from keras import preprocessing
+from keras.utils import pad_sequences
+from keras.preprocessing import sequence
+#from keras_preprocessing.sequence import pad_sequences
 from nltk.text import TextCollection
 from nltk.tokenize import word_tokenize
-nltk.download()
+#nltk.download()
 
 # from sklearn.feature_extraction.text import TfidfTransformer
 
@@ -323,10 +327,12 @@ def read_dataset(args, vocab_path, MAX_SEQUENCE_LENGTH):
     # ruling_embedding_train, ruling_embedding_test, category_embedding_train, category_embedding_test = train_test_split(ruling_embedding_train, 
     #                                                                                     category_embedding_train, test_size=0.15, random_state=20)
 
-    X_train_data = sequence.pad_sequences(X_train_data, maxlen=MAX_SEQUENCE_LENGTH)
-    X_test_data = sequence.pad_sequences(X_test_data, maxlen=MAX_SEQUENCE_LENGTH)
-    category_embedding_train = sequence.pad_sequences(category_embedding_train, maxlen=MAX_SEQUENCE_LENGTH)
-    category_embedding_test = sequence.pad_sequences(category_embedding_test, maxlen=MAX_SEQUENCE_LENGTH)
+    #X_train_data = sequence.pad_sequences(X_train_data, maxlen=MAX_SEQUENCE_LENGTH)
+    #CHANGED!!!lines 332- 335
+    X_train_data = pad_sequences(X_train_data, maxlen=MAX_SEQUENCE_LENGTH)
+    X_test_data = pad_sequences(X_test_data, maxlen=MAX_SEQUENCE_LENGTH)
+    category_embedding_train = pad_sequences(category_embedding_train, maxlen=MAX_SEQUENCE_LENGTH)
+    category_embedding_test = pad_sequences(category_embedding_test, maxlen=MAX_SEQUENCE_LENGTH)
 
     return X_train_data, X_test_data, y_train, y_test, np.array(train_chars), np.array(test_chars), task_idx_train, task_idx_test, np.array(ruling_embedding_train, dtype=np.float), \
         np.array(ruling_embedding_test, dtype=np.float), category_embedding_train, category_embedding_test, vocab
